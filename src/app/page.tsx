@@ -1,101 +1,168 @@
-import Image from "next/image";
+import Image from 'next/image'
+import { Github, Linkedin, Mail, Phone, BookOpen, Briefcase, GraduationCap, Code, Sun, Moon } from 'lucide-react'
 
-export default function Home() {
+export default function LandingPage({ toggleDarkMode }: { toggleDarkMode: () => void }) {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 transition-colors duration-200">
+      <main className="container mx-auto px-4 py-8">
+        <header className="text-center mb-12 relative">
+          <button
+            onClick={toggleDarkMode}
+            className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-200"
+            aria-label="Toggle dark mode"
+          >
+            <Sun className="hidden dark:block" size={24} />
+            <Moon className="block dark:hidden" size={24} />
+          </button>
+          <Image
+            src="/placeholder.svg?height=150&width=150"
+            alt="Foto de Perfil de Kauan Schamber"
+            width={150}
+            height={150}
+            className="rounded-full mx-auto mb-4 border-4 border-gray-400 dark:border-gray-600 shadow-lg"
+          />
+          <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-2">Kauan Schamber</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">Desenvolvedor Full Stack</p>
+          <div className="flex justify-center space-x-4 mb-4">
+            <a href="tel:+5569993988887" className="text-gray-700 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 flex items-center">
+              <Phone size={20} className="mr-2" />
+              (69) 9 9398-8887
+            </a>
+            <a href="mailto:schamberkauan@gmail.com" className="text-gray-700 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 flex items-center">
+              <Mail size={20} className="mr-2" />
+              schamberkauan@gmail.com
+            </a>
+          </div>
+          <div className="flex justify-center space-x-4">
+            <a href="https://www.linkedin.com/in/kauanarthur" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100">
+              <Linkedin size={24} />
+            </a>
+            <a href="https://github.com/Schambin" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100">
+              <Github size={24} />
+            </a>
+          </div>
+        </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">Resumo</h2>
+          <p className="text-gray-700 dark:text-gray-300">
+            Estou à procura de uma oportunidade onde possa utilizar meus conhecimentos em JavaScript, React e 
+            Node. Dedicado a desenvolver aplicações web escaláveis, responsivas, interativas e eficientes, estou motivado 
+            para me integrar a uma equipe dinâmica, contribuindo ativamente enquanto aprimoro minhas habilidades com 
+            experiências práticas.
+          </p>
+        </section>
+
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
+            <Code className="mr-2" />
+            Habilidades
+          </h2>
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              "JavaScript", "Node", "React", "TypeScript", "Zod", "TailwindCSS", "Scss", "MongoDB", "SQL", "SQLite", 
+              "Java", "Spring Boot", "Git", "GitHub", "NextJs", "Vite", "Comunicação", "Inglês C1",
+               "Scrum", "Bitrix", "Trabalho em Equipe", "Resolução de problemas", "Colaboração em projetos"
+            ].map((skill, index) => (
+              <li 
+                key={index} 
+                className={`bg-gray-100 dark:bg-gray-700 rounded-full px-4 py-2 text-center text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-gray-100 ${
+                  skill.length > 10 ? 'text-xs' : 'text-sm'
+                }`}
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
+            <Briefcase className="mr-2" />
+            Experiências
+          </h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Gerente de Desenvolvimento de Sistemas | Norte Tel – Pimenta Bueno/RO</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-2">07/2022 - Atualmente</p>
+              <p className="text-gray-700 dark:text-gray-300">
+                Liderei a reformulação dos fluxos de comunicação para interação de clientes entre Opa!Suite e Whatsapp, além de 
+                realizar manutenções e melhorias tanto no Opa!Suite quanto no IXCSoft. Fui responsável pela criação de APIs para 
+                otimizar processos de inserção de tarefas no IXC, melhorando em 80% a eficiência de trabalho das filiais. Líder do 
+                departamento de Tecnologia.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Desenvolvedor Full Stack | Freelancer</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-2">07/2024 - 08/2024</p>
+              <p className="text-gray-700 dark:text-gray-300">
+                Desenvolvi uma aplicação web completa utilizando React e TypeScript, implementando autenticação JWT, integração com 
+                MongoDB via Prisma e criando uma interface intuitiva para gerenciamento de usuários. O projeto incluiu desde a criação 
+                de APIs até a implementação de funcionalidades de registro e login, com foco em segurança e performance.
+              </p>
+              <p className="text-gray-600 dark:text-gray-400">Repositórios: Schambin/signin-web | Schambin/signin-api</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Desenvolvedor Full Stack | NorteTel</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-2">09/2024 - 10/2024</p>
+              <p className="text-gray-700 dark:text-gray-300">
+                Criei um sistema de formulários reutilizáveis com React e TypeScript, permitindo o envio de dados e arquivos (PDF/DOCX) 
+                para um Banco de dados no Google Sheets via API. O projeto incluiu validação de dados utilizando Zod, integração com 
+                Google Drive para armazenamento de arquivos, foco em escalabilidade e manutenção do código, além de implementação 
+                de medidas de segurança como Rate Limiting e HTTPS.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
+            <GraduationCap className="mr-2" />
+            Educação
+          </h2>
+          <ul className="space-y-4">
+            <li>
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Engenharia de Software – Cruzeiro do Sul</h3>
+              <p className="text-gray-600 dark:text-gray-400">01/2023 – 01/2026</p>
+            </li>
+            <li>
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Desenvolvedor FullStack – RocketSeat</h3>
+              <p className="text-gray-600 dark:text-gray-400">01/2024 – 01/2025</p>
+            </li>
+          </ul>
+        </section>
+
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
+            <BookOpen className="mr-2" />
+            Cursos Relevantes
+          </h2>
+          <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+            <li>RocketSeat HTML, CSS JavaScript</li>
+            <li>RocketSeat React</li>
+            <li>RocketSeat Node</li>
+            <li>RocketSeat Clean Code</li>
+            <li>RocketSeat Java</li>
+            <li>UX/UI para desenvolvedores</li>
+            <li>Figma para desenvolvedores</li>
+            <li>Aplicações Web</li>
+            <li>Acessibilidades Web</li>
+          </ul>
+        </section>
+
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">Atividades de Liderança e Interesse</h2>
+          <div>
+            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Professor | NorteTel</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-2">09/2024 – 09/2024</p>
+            <p className="text-gray-700 dark:text-gray-300">
+              Ministrei aulas de tecnologia com mais de 15 membros no âmbito do projeto ODS da faculdade. Cobri 
+              fundamentos de HTML, CSS e JavaScript. Abordei conceitos de front-end, back-end e bancos de dados, além de 
+              como as aplicações web interagem entre si e a integração da programação no cotidiano.
+            </p>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
-  );
+  )
 }
