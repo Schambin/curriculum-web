@@ -9,11 +9,11 @@ export default function LandingPage() {
       <main className="container mx-auto px-4 py-8">
         <header className="text-center mb-12">
           <Image
-            src="/placeholder.svg?height=150&width=150"
+            src="/kauan_schamber.png"
             alt="Foto de Perfil de Kauan Schamber"
             width={150}
             height={150}
-            className="rounded-full mx-auto mb-4 border-4 border-gray-400shadow-lg"
+            className="rounded-full mx-auto mb-4 border-4 border-gray-400 shadow-lg object-fill"
           />
           <h1 className="text-4xl font-bold text-gray-800 mb-2">Kauan Schamber</h1>
           <p className="text-xl text-gray-600 mb-4">Desenvolvedor Full Stack</p>
@@ -30,7 +30,7 @@ export default function LandingPage() {
           <div className="flex justify-center space-x-4">
             <a href="https://www.linkedin.com/in/kauanarthur" target="_blank" rel="noopener noreferrer" className="text-gray-700 300 hover:text-gray-800 ">
               <Linkedin size={24} />
-            </a>
+            </a>  
             <a href="https://github.com/Schambin" target="_blank" rel="noopener noreferrer" className="text-gray-700 300 hover:text-gray-800">
               <Github size={24} />
             </a>
