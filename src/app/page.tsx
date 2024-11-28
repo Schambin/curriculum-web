@@ -1,11 +1,29 @@
-import Image from 'next/image'
-import { Github, Linkedin, Mail, Phone, BookOpen, Briefcase, GraduationCap, Code, Sun, Moon } from 'lucide-react'
+'use client';
 
-export default function LandingPage({ toggleDarkMode }: { toggleDarkMode: () => void }) {
+import './globals.css'
+import Image from 'next/image'
+import { Github, Linkedin, Mail, Phone, BookOpen, Briefcase, GraduationCap, Code, BookOpen as BookOpenIcon, Gamepad, Moon, Sun } from 'lucide-react'
+import { useEffect, useState } from 'react'
+
+export default function LandingPage() {
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [darkMode])
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 transition-colors duration-200">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200">
       <main className="container mx-auto px-4 py-8">
-        <header className="text-center mb-12 relative">
+        <header className="text-center mb-12">
           <button
             onClick={toggleDarkMode}
             className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-200"
@@ -151,7 +169,66 @@ export default function LandingPage({ toggleDarkMode }: { toggleDarkMode: () => 
         </section>
 
         <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">Atividades de Liderança e Interesse</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center border-l-4 border-gray-300 pl-3">
+            <BookOpenIcon className="mr-2" />
+            Hábitos de Estudo
+          </h2>
+          <div className="space-y-4 text-gray-700">
+            <p>
+              Minha principal plataforma de estudo é a RocketSeat, onde aprofundo meus conhecimentos em:
+            </p>
+            <ul className="list-disc list-inside pl-4 space-y-2">
+              <li>Java</li>
+              <li>Node</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Frameworks como NextJs, NestJs</li>
+              <li>Microframeworks como Vite, Express e Fastify</li>
+            </ul>
+            <p>
+              Além disso, frequentemente recorro ao Google e YouTube para buscar conteúdos específicos que necessito.
+            </p>
+            <p>
+              Tenho me dedicado cada vez mais à leitura de livros técnicos. Atualmente, estou lendo:
+            </p>
+            <ul className="list-disc list-inside pl-4 space-y-2">
+              <li>"Desenvolvimento Real de Software: um Guia de Projetos Para Fundamentos em Java"</li>
+              <li>"Aprenda Domain-driven Design: Alinhando Arquitetura de Software e Estratégia de Negócios"</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center border-l-4 border-gray-300 pl-3">
+            <Gamepad className="mr-2" />
+            Atividades Favoritas
+          </h2>
+          <div className="space-y-4 text-gray-700">
+            <p>
+              Embora atualmente esteja focado nos estudos, sou um grande entusiasta de videogames. Alguns dos meus jogos favoritos incluem:
+            </p>
+            <ul className="list-disc list-inside pl-4 space-y-2">
+              <li>osu!</li>
+              <li>Cyberpunk</li>
+              <li>Apex Legends</li>
+              <li>Terraria</li>
+              <li>Minecraft (inclusive já desenvolvi mods quando era mais jovem)</li>
+            </ul>
+            <p>
+              Além dos jogos, gosto muito de ler. Não tenho um gênero favorito específico, geralmente escolho livros que me parecem interessantes à primeira vista.
+            </p>
+            <p>
+              Também aprecio assistir séries. Algumas das minhas favoritas são:
+            </p>
+            <ul className="list-disc list-inside pl-4 space-y-2">
+              <li>Dr. House</li>
+              <li>Todo Mundo Odeia o Chris</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center border-l-4 border-gray-300 pl-3">Atividades de Liderança e Interesse</h2>
           <div>
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Professor | NorteTel</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-2">09/2024 – 09/2024</p>
