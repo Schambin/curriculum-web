@@ -1,9 +1,6 @@
-'use client';
-
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import React, { useState, useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,24 +14,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
-
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        {React.cloneElement(children as React.ReactElement, { toggleDarkMode })}
+        {children}
       </body>
     </html>
   )
