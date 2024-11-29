@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Github, Linkedin, Mail, Phone, BookOpen, Briefcase, GraduationCap, Code, BookOpen as BookOpenIcon, Gamepad, Moon, Sun } from 'lucide-react';
 import { useDarkMode } from './hooks/useDarkMode';
 import { Header } from './components/Header';
+import { Section } from './components/section';
 export default function LandingPage() {
   
   const [darkMode, setDarkMode] = useDarkMode();
@@ -17,38 +18,14 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 transition-colors duration-200">
       <main className="container mx-auto px-4 py-8">
         <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">Resumo</h2>
+        <Section title='Resumo'>
           <p className="text-gray-700 dark:text-gray-300">
             Estou à procura de uma oportunidade onde possa utilizar meus conhecimentos em JavaScript, React e 
             Node. Dedicado a desenvolver aplicações web escaláveis, responsivas, interativas e eficientes, estou motivado 
             para me integrar a uma equipe dinâmica, contribuindo ativamente enquanto aprimoro minhas habilidades com 
             experiências práticas.
           </p>
-        </section>
-
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
-            <Code className="mr-2" />
-            Habilidades
-          </h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[
-              "JavaScript", "Node", "React", "TypeScript", "Zod", "TailwindCSS", "Scss", "MongoDB", "SQL", "SQLite", 
-              "Java", "Spring Boot", "Git", "GitHub", "NextJs", "Vite", "Comunicação", "Inglês C1",
-               "Scrum", "Bitrix", "Trabalho em Equipe", "Resolução de problemas", "Colaboração em projetos"
-            ].map((skill, index) => (
-              <li 
-                key={index} 
-                className={`bg-gray-100 dark:bg-gray-700 rounded-full px-4 py-2 text-center text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-gray-100 ${
-                  skill.length > 10 ? 'text-xs' : 'text-sm'
-                }`}
-              >
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </section>
+        </Section>
 
         <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
