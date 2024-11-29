@@ -30,10 +30,9 @@ export default function LandingPage() {
 
         <Skills />
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+        <Section title='Experiências'>
           <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
             <Briefcase className="mr-2" />
-            Experiências
           </h2>
           <div className="space-y-6">
             <div>
@@ -67,13 +66,9 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
-        </section>
+        </Section>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
-            <GraduationCap className="mr-2" />
-            Educação
-          </h2>
+        <Section title="Educação" icon={<GraduationCap />}>
           <ul className="space-y-4">
             <li>
               <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Engenharia de Software – Cruzeiro do Sul</h3>
@@ -84,13 +79,9 @@ export default function LandingPage() {
               <p className="text-gray-600 dark:text-gray-400">01/2024 – 01/2025</p>
             </li>
           </ul>
-        </section>
+        </Section>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
-            <BookOpen className="mr-2" />
-            Cursos Relevantes
-          </h2>
+        <Section title="Cursos Relevantes" icon={<BookOpen />}>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
             <li>RocketSeat HTML, CSS JavaScript</li>
             <li>RocketSeat React</li>
@@ -102,13 +93,9 @@ export default function LandingPage() {
             <li>Aplicações Web</li>
             <li>Acessibilidades Web</li>
           </ul>
-        </section>
+        </Section>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
-            <BookOpenIcon className="mr-2" />
-            Hábitos de Estudo
-          </h2>
+        <Section title="Hábitos de Estudo" icon={<BookOpenIcon />}>
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p>
               Minha principal plataforma de estudo é a RocketSeat, onde aprofundo meus conhecimentos em:
@@ -132,13 +119,9 @@ export default function LandingPage() {
               <li>"Aprenda Domain-driven Design: Alinhando Arquitetura de Software e Estratégia de Negócios"</li>
             </ul>
           </div>
-        </section>
+        </Section>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">
-            <Gamepad className="mr-2" />
-            Atividades Favoritas
-          </h2>
+        <Section title="Atividades Favoritas" icon={<Gamepad />}>
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p>
               Embora atualmente esteja focado nos estudos, sou um grande entusiasta de videogames. Alguns dos meus jogos favoritos incluem:
@@ -161,10 +144,9 @@ export default function LandingPage() {
               <li>Todo Mundo Odeia o Chris</li>
             </ul>
           </div>
-        </section>
+        </Section>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center border-l-4 border-gray-300 dark:border-gray-600 pl-3">Atividades de Liderança e Interesse</h2>
+        <Section title="Atividades de Liderança e Interesse">
           <div>
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200">Professor | NorteTel</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-2">09/2024 – 09/2024</p>
@@ -174,7 +156,7 @@ export default function LandingPage() {
               como as aplicações web interagem entre si e a integração da programação no cotidiano.
             </p>
           </div>
-        </section>
+        </Section>
       </main>
     </div>
   )
