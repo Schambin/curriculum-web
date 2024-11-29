@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-react";
+import { Github, Linkedin, Mail, Moon, Phone, Sun } from "lucide-react";
 import Image from "next/image";
 
 interface HeaderProps {
