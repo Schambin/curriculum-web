@@ -3,26 +3,14 @@
 import './globals.css'
 import Image from 'next/image'
 import { Github, Linkedin, Mail, Phone, BookOpen, Briefcase, GraduationCap, Code, BookOpen as BookOpenIcon, Gamepad, Moon, Sun } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useDarkMode } from './hooks/useDarkMode';
 export default function LandingPage() {
   
-  
-  const [darkMode, setDarkMode] = useState(false);
-  
-  useEffect(() => {
-    localStorage.getItem('darkMode') === 'true' ? setDarkMode(true) : setDarkMode(false);
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
+  const [darkMode, setDarkMode] = useDarkMode();
   
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-  };
-  
-  localStorage.setItem('darkMode', 'false');
+  };  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 transition-colors duration-200">
