@@ -2,11 +2,11 @@
 
 import './globals.css'
 import Image from 'next/image'
-import { Github, Linkedin, Mail, Phone, BookOpen, Briefcase, GraduationCap, Code, BookOpen as BookOpenIcon, Gamepad, Moon, Sun } from 'lucide-react';
+import { BookOpen, Briefcase, GraduationCap, BookOpen as BookOpenIcon, Gamepad } from 'lucide-react';
 import { useDarkMode } from './hooks/useDarkMode';
 import { Header } from './components/Header';
-import { Section } from './components/section';
 import { Skills } from './components/Skills';
+import { Section } from './components/Section';
 export default function LandingPage() {
   
   const [darkMode, setDarkMode] = useDarkMode();

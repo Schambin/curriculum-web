@@ -1,5 +1,5 @@
 import { Code } from "lucide-react"
-import { Section } from "./section"
+import { Section } from "@/app/components/Section"
 
 const skills = [
     "JavaScript", "Node", "React", "TypeScript", "Zod", "TailwindCSS", "Scss", "MongoDB", "SQL", "SQLite", 
