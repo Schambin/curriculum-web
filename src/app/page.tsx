@@ -3,17 +3,32 @@
 import './globals.css'
 import Image from 'next/image'
 import { Github, Linkedin, Mail, Phone, BookOpen, Briefcase, GraduationCap, Code, BookOpen as BookOpenIcon, Gamepad, Moon, Sun } from 'lucide-react';
+import { useEffect, useState } from 'react';
 export default function LandingPage() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 transition-colors duration-200">
       <main className="container mx-auto px-4 py-8">
         <header className="text-center mb-12 relative">
           <button
-            // onClick={toggleDarkMode}
+            onClick={toggleDarkMode}
             className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-200"
             aria-label="Toggle dark mode"
           >
-            {/* {darkMode ? <Sun size={24} /> : <Moon size={24} />} */}
+            {darkMode ? <Sun size={24} /> : <Moon size={24} />}
           </button>
           <Image
             src="/kauan_schamber.png"
