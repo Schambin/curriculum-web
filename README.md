@@ -12,7 +12,6 @@ This project is a responsive landing page built with Next.js and Tailwind CSS, s
 
 ## Project Structure
 
-\`\`\`
 ResponsiveLandingPage/
 ├── app/
 │   ├── components/
@@ -30,7 +29,6 @@ ResponsiveLandingPage/
 ├── postcss.config.js
 ├── package.json
 └── README.md
-\`\`\`
 
 This structure reflects the modular organization of our Next.js application, with components, hooks, and configuration files clearly separated.
 
