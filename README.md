@@ -1,4 +1,4 @@
-# Responsive Landing Page - Kauan Schamber Portfolio
+Kauan Schamber Portfolio
 
 This project is a responsive landing page built with Next.js and Tailwind CSS, showcasing the professional portfolio of Kauan Schamber, a Full Stack Developer.
 
